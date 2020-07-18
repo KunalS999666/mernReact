@@ -2,19 +2,40 @@
   "name": "create_reactapp_express",
   "version": "0.1.0",
   "private": true,
+  
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
+    "array-move": "^2.2.1",
+    "axios": "^0.19.2",
+    "countries-and-timezones": "^1.0.2",
+    "jquery": "^3.4.1",
+    "moment": "2.24.0",
+    "moment-timezone": "0.5.28",
+    "node-sass": "^4.13.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "react-d3": "^0.4.0",
+    "react-d3-speedometer": "^0.11.0",
+    "react-icons": "^3.7.0",
+    "react-idle-timer": "^4.2.12",
+    "react-moment": "^0.9.7",
+    "react-router-dom": "^5.1.2",
+    "react-sortable-hoc": "^1.10.1",
+    "react-tabulator": "",
+    "styled-components": "^5.1.0",
+    "typescript": "^3.8.3",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "copyWorkbox": "shx mkdir ./build/workbox-v4.3.1/ && shx cp ./node_modules/workbox-sw.js ./node_modules/workbox-core/build/workbox-core.prod.js ./node_modules/workbox-precaching/workbox-precaching.prod.js build/workbox-v4.3.1/",
+    "dist": "shx rm rf- build/* && npm run build && npm run build && workbox generateSW",
+    "serve": "npm run dist && http-server ./build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,5 +51,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "shx": "^0.3.2",
+    "workbox-cli": "^4.3.1"
   }
 }
